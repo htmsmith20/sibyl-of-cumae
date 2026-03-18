@@ -41,7 +41,7 @@ Applied unsupervised learning techniques to segment customers from a large-scale
 Identify meaningful customer segments based on behavioural purchasing patterns.
 
 ### Approach
-- Dataset: 951,669 transactions aggregated into ~63,800 customers  [oai_citation:3‡Smith_Harry_CAM_C101_Week_6_Mini-project.pdf](sediment://file_000000000520724398e65a001e3546f0)  
+- Dataset: 951,669 transactions aggregated into ~63,800 customers
 - Feature engineering:
   - Aggregation to customer-level behavioural features (frequency, recency, CLV, etc.)
 - Methods:
@@ -52,7 +52,7 @@ Identify meaningful customer segments based on behavioural purchasing patterns.
 - PCA and t-SNE used for dimensionality reduction and cluster visualisation
 
 ### Key Results
-- Optimal cluster range identified as 4–5 clusters across all diagnostic methods  [oai_citation:4‡Smith_Harry_CAM_C101_Week_6_Mini-project.pdf](sediment://file_000000000520724398e65a001e3546f0)  
+- Optimal cluster range identified as 4–5 clusters across all diagnostic methods
 - Silhouette scores indicated moderate cluster separation (peak ≈ 0.265)  
 - 5-cluster solution improved segmentation granularity, particularly within high-value customers  
 - Clear behavioural differentiation observed across clusters (e.g. high-frequency/high-CLV vs low-frequency segments)
@@ -91,7 +91,7 @@ Developed an anomaly detection system to identify abnormal engine behaviour in a
 Detect anomalous engine activity in the absence of labelled data.
 
 ### Approach
-- Dataset: 19,535 observations across six engine features  [oai_citation:0‡Smith_Harry_CAM_C101_W5_Mini-project.pdf](sediment://file_00000000ce88720a820279a17e5d67f4)  
+- Dataset: 19,535 observations across six engine features
 - Methods:
   - Interquartile Range (IQR) for univariate outlier detection
   - One-Class SVM (OCSVM)
@@ -100,10 +100,10 @@ Detect anomalous engine activity in the absence of labelled data.
 - PCA used for dimensionality reduction and anomaly visualisation
 
 ### Key Results
-- Univariate IQR flagged ~21.6% of observations as partially anomalous but failed at row-level classification  [oai_citation:1‡Smith_Harry_CAM_C101_W5_Mini-project.pdf](sediment://file_00000000ce88720a820279a17e5d67f4)  
+- Univariate IQR flagged ~21.6% of observations as partially anomalous but failed at row-level classification
 - Multivariate thresholding identified ~2.1% of observations as true anomalies  
 - OCSVM and Isolation Forest successfully captured anomalies within the expected 1–5% range  
-- Model agreement identified ~3.3% overlapping anomalies across methods  [oai_citation:2‡Smith_Harry_CAM_C101_W5_Mini-project.pdf](sediment://file_00000000ce88720a820279a17e5d67f4)  
+- Model agreement identified ~3.3% overlapping anomalies across methods
 
 ### Key Insight
 Unsupervised machine learning methods significantly outperform statistical approaches by capturing multivariate relationships. Isolation Forest proved most practical due to robustness, interpretability, and direct control over anomaly rates.
