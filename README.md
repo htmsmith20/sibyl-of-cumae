@@ -87,6 +87,8 @@ Detect anomalous engine activity in the absence of labelled data.
 ### Key Insight
 Unsupervised machine learning methods significantly outperform statistical approaches by capturing multivariate relationships. Isolation Forest proved most practical due to robustness, interpretability, and direct control over anomaly rates.
 
+---
+
 ## Tech Stack
 
 Python, pandas, scikit-learn, XGBoost, TensorFlow/Keras, matplotlib
