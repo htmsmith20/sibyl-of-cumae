@@ -62,27 +62,6 @@ Customer behaviour exists on a continuum rather than in sharply defined groups. 
 
 ---
 
-## Tech Stack
-
-Python, pandas, scikit-learn, XGBoost, TensorFlow/Keras, matplotlib
-
----
-
-## Repository Structure
-
-- `student_dropout_prediction.ipynb` — supervised modelling (classification)
-- `anomaly_detection_engine.ipynb` — unsupervised anomaly detection
-- `customer_segmentation.ipynb` — clustering and segmentation
-
----
-
-## Next Projects
-
-- Time series forecasting
-- Recommendation systems
-- Feature engineering pipelines at scale
----
-
 ## Project: Anomaly Detection in Ship Engine Data
 
 Developed an anomaly detection system to identify abnormal engine behaviour in a shipping fleet, supporting predictive maintenance and operational reliability.
@@ -107,3 +86,25 @@ Detect anomalous engine activity in the absence of labelled data.
 
 ### Key Insight
 Unsupervised machine learning methods significantly outperform statistical approaches by capturing multivariate relationships. Isolation Forest proved most practical due to robustness, interpretability, and direct control over anomaly rates.
+
+## Tech Stack
+
+Python, pandas, scikit-learn, XGBoost, TensorFlow/Keras, matplotlib
+
+---
+
+## Repository Structure
+
+- `student_dropout_prediction.ipynb` — supervised modelling (classification)
+- `anomaly_detection_engine.ipynb` — unsupervised anomaly detection
+- `customer_segmentation.ipynb` — clustering and segmentation
+
+---
+
+## Next Projects
+
+- Time series forecasting
+- Recommendation systems
+- Feature engineering pipelines at scale
+
+---
