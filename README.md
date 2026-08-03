@@ -1,7 +1,8 @@
 # sibyl-of-cumae
-# Machine Learning Portfolio
 
-A collection of applied machine learning and NLP projects focused on predictive modelling, unsupervised learning, feature engineering, and real-world analytical systems.
+## Machine Learning Portfolio
+
+A collection of applied machine learning, deep learning, time-series forecasting, and NLP projects focused on predictive modelling, feature engineering, unsupervised learning, and real-world analytical systems.
 
 ---
 
@@ -10,143 +11,191 @@ A collection of applied machine learning and NLP projects focused on predictive 
 Developed an end-to-end NLP pipeline to analyse customer reviews from Google and Trustpilot, identify operational pain points, and generate actionable recommendations for improving customer experience.
 
 ### Objective
-Identify the key drivers of negative customer sentiment across PureGym locations using advanced NLP and topic modelling techniques.
+
+Identify the key drivers of negative customer sentiment across PureGym locations using advanced NLP and topic-modelling techniques.
 
 ### Approach
-- Dataset: ~40,000 reviews across Google and Trustpilot
-- Data cleansing and standardisation:
-  - text cleaning
-  - tokenisation
-  - stopword removal
-  - sentiment filtering
-- Methods:
-  - Word frequency analysis and word clouds
-  - BERT emotion classification
-  - BERTopic topic modelling
-  - Gensim LDA topic modelling
-  - Phi-4 LLM topic extraction and summarisation
-- Geographic hotspot analysis across gym locations
-- Topic aggregation and operational recommendation generation
+
+- Analysed approximately 40,000 Google and Trustpilot reviews
+- Cleaned, tokenised, and standardised review text
+- Applied sentiment filtering and word-frequency analysis
+- Used BERT for emotion classification
+- Compared BERTopic and Gensim LDA topic models
+- Used Phi-4 for topic extraction and summarisation
+- Conducted geographic hotspot analysis across gym locations
 
 ### Key Results
-- Negative sentiment concentrated heavily around:
-  - cleanliness and hygiene
-  - staff behaviour
-  - equipment availability
-  - overcrowding
+
+- Negative sentiment concentrated around cleanliness, staff behaviour, equipment availability, and overcrowding
 - BERTopic produced the clearest operational themes when applied to anger-filtered reviews
-- LLM summarisation successfully converted raw customer complaints into actionable operational recommendations
-- London and other high-footfall urban locations showed the highest concentration of negative reviews
+- LLM summarisation converted customer complaints into actionable operational recommendations
+- London and other high-footfall urban locations showed the greatest concentration of negative reviews
 
 ### Key Insight
-Combining transformer-based topic modelling with LLM summarisation creates a highly effective workflow for converting large-scale unstructured customer feedback into operationally actionable business intelligence.
+
+Combining transformer-based topic modelling with LLM summarisation provides an effective workflow for converting large-scale customer feedback into actionable business intelligence.
+
+[View notebook](topic_modelling_for_pure-gym.ipynb)
+
+---
+
+## Project: Book Sales and Demand Forecasting
+
+Developed and compared statistical, machine-learning, deep-learning, and hybrid models to forecast Nielsen BookScan sales for *The Alchemist* and *The Very Hungry Caterpillar*.
+
+### Objective
+
+Forecast future book sales and identify suitable modelling strategies to support procurement, reordering, stock control, and reprinting decisions.
+
+### Approach
+
+- Resampled weekly sales data and handled missing observations
+- Analysed trend, seasonality, stationarity, and autocorrelation
+- Applied time-series decomposition, ADF, KPSS, ACF, and PACF analysis
+- Compared Auto ARIMA/SARIMA, XGBoost, and LSTM models
+- Developed sequential and parallel SARIMA–LSTM hybrid models
+- Tuned models using grid search, expanding-window validation, and KerasTuner
+- Evaluated weekly 32-week and monthly eight-month forecasts using MAE and MAPE
+
+### Key Results
+
+- For *The Alchemist*, tuned XGBoost achieved the lowest MAE of **138.41**
+- The sequential SARIMA–LSTM hybrid achieved the best proportional accuracy for *The Alchemist*, with a MAPE of **21.62%**
+- For *The Very Hungry Caterpillar*, the parallel SARIMA–LSTM hybrid achieved the lowest MAE of **442.75**
+- A stacked LSTM achieved the best proportional accuracy for *The Very Hungry Caterpillar*, with a MAPE of **22.60%**
+- Machine-learning and hybrid approaches substantially outperformed Auto ARIMA on the more irregular sales series
+- Monthly aggregation generally weakened performance by reducing training data and smoothing important demand spikes
+
+### Key Insight
+
+No single model performed best across both books. Book-specific model selection produced the strongest results, with hybrid SARIMA–LSTM models offering the most robust overall approach and XGBoost providing a strong, maintainable benchmark.
+
+[View notebook](book_sales_demand_forecasting.ipynb)
 
 ---
 
 ## Project: Student Dropout Prediction
 
-Built supervised machine learning models to predict whether a student will drop out, using staged datasets that progressively introduce richer features.
+Built supervised machine-learning models to predict student dropout using staged datasets that progressively introduced richer academic and engagement features.
 
 ### Objective
-Predict student dropout with high accuracy and identify the key drivers of model performance.
+
+Predict student dropout accurately and identify the factors driving model performance.
 
 ### Approach
-- Feature engineering including module progression, attendance, and engagement metrics
-- Preprocessing: encoding, scaling, and staged dataset construction
-- Models:
-  - XGBoost
-  - Neural Networks (baseline, tuned, deep)
-- Evaluation:
-  - Accuracy, Precision, Recall, F1 Score, ROC-AUC
+
+- Engineered academic progression, attendance, and engagement features
+- Applied encoding, scaling, and staged dataset construction
+- Compared XGBoost with baseline, tuned, and deep neural networks
+- Evaluated performance using accuracy, precision, recall, F1 score, and ROC-AUC
 
 ### Key Results
-- Stage 3 models achieved AUC ≈ 0.999
-- XGBoost slightly outperformed neural networks on tabular data
-- Performance improvements were driven primarily by:
-  - Academic progression (modules passed)
-  - Attendance patterns (authorised/unauthorised absences)
+
+- Stage 3 models achieved an ROC-AUC of approximately **0.999**
+- XGBoost slightly outperformed the neural networks on tabular data
+- Academic progression and attendance patterns were the strongest predictors
 
 ### Key Insight
-Model performance was driven significantly more by feature quality than model complexity or hyperparameter tuning.
+
+Feature quality had a substantially greater effect on performance than model complexity or hyperparameter tuning.
+
+[View notebook](predicting_student_drop-out.ipynb)
 
 ---
 
 ## Project: Customer Segmentation with Clustering
 
-Applied unsupervised learning techniques to segment customers from a large-scale e-commerce dataset, enabling targeted marketing strategies.
+Applied unsupervised learning to segment customers from a large-scale e-commerce dataset, supporting more targeted marketing strategies.
 
 ### Objective
-Identify meaningful customer segments based on behavioural purchasing patterns.
+
+Identify meaningful customer segments based on purchasing behaviour.
 
 ### Approach
-- Dataset: 951,669 transactions aggregated into ~63,800 customers
-- Feature engineering:
-  - Aggregation to customer-level behavioural features (frequency, recency, CLV, etc.)
-- Methods:
-  - Elbow Method (WCSS)
-  - Silhouette Score
-  - Hierarchical Clustering (dendrogram)
-  - K-Means clustering
-- PCA and t-SNE used for dimensionality reduction and cluster visualisation
+
+- Aggregated 951,669 transactions into approximately 63,800 customer profiles
+- Engineered behavioural features including frequency, recency, and customer lifetime value
+- Used the elbow method, silhouette scores, hierarchical clustering, and K-Means
+- Applied PCA and t-SNE for dimensionality reduction and visualisation
 
 ### Key Results
-- Optimal cluster range identified as 4–5 clusters across all diagnostic methods
-- Silhouette scores indicated moderate cluster separation (peak ≈ 0.265)
-- 5-cluster solution improved segmentation granularity, particularly within high-value customers
-- Clear behavioural differentiation observed across clusters (e.g. high-frequency/high-CLV vs low-frequency segments)
+
+- Diagnostic methods indicated an optimal range of four to five clusters
+- The five-cluster solution improved segmentation of high-value customers
+- Clear differences emerged between high-frequency, high-value, and low-frequency customers
+- The peak silhouette score was approximately **0.265**, indicating moderate cluster separation
 
 ### Key Insight
-Customer behaviour exists on a continuum rather than in sharply defined groups. Clustering captures meaningful structure, but segmentation should be interpreted as probabilistic rather than strictly discrete.
+
+Customer behaviour exists on a continuum rather than in sharply separated groups. Segments should therefore be interpreted as useful behavioural profiles rather than rigid categories.
+
+[View notebook](customer_segmentation_with_clustering.ipynb)
 
 ---
 
 ## Project: Anomaly Detection in Ship Engine Data
 
-Developed an anomaly detection system to identify abnormal engine behaviour in a shipping fleet, supporting predictive maintenance and operational reliability.
+Developed an unsupervised anomaly-detection system to identify abnormal engine behaviour and support predictive maintenance.
 
 ### Objective
-Detect anomalous engine activity in the absence of labelled data.
+
+Detect anomalous engine activity without labelled training data.
 
 ### Approach
-- Dataset: 19,535 observations across six engine features
-- Methods:
-  - Interquartile Range (IQR) for univariate outlier detection
-  - One-Class SVM (OCSVM)
-  - Isolation Forest
-- Feature scaling applied where required (OCSVM)
-- PCA used for dimensionality reduction and anomaly visualisation
+
+- Analysed 19,535 observations across six engine features
+- Used the interquartile range for univariate outlier detection
+- Applied One-Class SVM and Isolation Forest
+- Scaled features where required
+- Used PCA to visualise anomalies
 
 ### Key Results
-- Univariate IQR flagged ~21.6% of observations as partially anomalous but failed at row-level classification
-- Multivariate thresholding identified ~2.1% of observations as true anomalies
-- OCSVM and Isolation Forest successfully captured anomalies within the expected 1–5% range
-- Model agreement identified ~3.3% overlapping anomalies across methods
+
+- Univariate IQR analysis flagged approximately 21.6% of observations but was unsuitable for row-level classification
+- Multivariate thresholding identified approximately 2.1% of observations as anomalies
+- One-Class SVM and Isolation Forest produced anomaly rates within the expected 1–5% range
+- Approximately 3.3% of observations were identified as anomalies by both models
 
 ### Key Insight
-Unsupervised machine learning methods significantly outperform statistical approaches by capturing multivariate relationships. Isolation Forest proved most practical due to robustness, interpretability, and direct control over anomaly rates.
+
+Unsupervised machine-learning methods outperformed univariate statistical rules by capturing relationships between engine variables. Isolation Forest provided the most practical balance of robustness, interpretability, and anomaly-rate control.
+
+[View notebook](anomalies_in_ship_engine.ipynb)
 
 ---
 
 ## Tech Stack
 
-Python, pandas, scikit-learn, XGBoost, TensorFlow/Keras, BERTopic, Hugging Face Transformers, Gensim, matplotlib
+- Python
+- pandas and NumPy
+- scikit-learn
+- XGBoost
+- TensorFlow and Keras
+- KerasTuner
+- statsmodels and pmdarima
+- sktime
+- BERTopic
+- Hugging Face Transformers
+- Gensim
+- matplotlib and seaborn
 
 ---
 
 ## Repository Structure
 
-- `puregym_nlp_analysis.ipynb` — NLP, topic modelling, and LLM analysis
-- `student_dropout_prediction.ipynb` — supervised modelling (classification)
-- `anomaly_detection_engine.ipynb` — unsupervised anomaly detection
-- `customer_segmentation.ipynb` — clustering and segmentation
+| File | Description |
+|---|---|
+| [`topic_modelling_for_pure-gym.ipynb`](topic_modelling_for_pure-gym.ipynb) | NLP, topic modelling, emotion classification, and LLM analysis |
+| [`book_sales_demand_forecasting.ipynb`](book_sales_demand_forecasting.ipynb) | Statistical, machine-learning, deep-learning, and hybrid time-series forecasting |
+| [`predicting_student_drop-out.ipynb`](predicting_student_drop-out.ipynb) | Supervised classification and student dropout prediction |
+| [`customer_segmentation_with_clustering.ipynb`](customer_segmentation_with_clustering.ipynb) | Customer clustering and behavioural segmentation |
+| [`anomalies_in_ship_engine.ipynb`](anomalies_in_ship_engine.ipynb) | Unsupervised anomaly detection for ship engine data |
 
 ---
 
-## Next Projects
+## Planned Projects
 
-- Time series forecasting
 - Recommendation systems
-- Graph-based ML and probabilistic models
-- Feature engineering pipelines at scale
-
----
+- Graph-based machine learning
+- Probabilistic modelling
+- Feature-engineering pipelines at scale
